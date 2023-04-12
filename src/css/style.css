@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+body {
+    min-height: 100vh;
+    font-size: 1.5rem;
+    font-family: 'Kumbh Sans';
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: var(--primary-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+i.fa-github {
+    color: white;
+    font-size: 6rem;
+    margin: 50px 0 30px 0;
+}
+
+.main {
+    margin-bottom: 100px;
+}
+
+.container {
+    margin: 15px;
+    max-width: 960px;
+    min-width: 960px;
+    background-color: #FFF;
+    border-radius: 30px;
+}
+
+.container .title {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.input-area,
+.profile-container:has(.data),
+.events-container:has(ul),
+.repositories-container:has(ul) {
+    padding: 20px;
+    position: relative;
+}
+
+.loading-container {
+    background-color: #80808079;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-radius: 30px;
+}
+
+.loading-container.active {
+    display: block;
+}
+
+.loading-container .loading-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container .input-area .title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.container .input-area {
+    height: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .input-area #username-input,
+.container .input-area #search-btn {
+    border-radius: 7px;
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 0 auto;
+    font-size: 1.7rem;
+}
+
+.container .input-area #username-input {
+    width: 400px;
+}
+
+.container .input-area #search-btn {
+    width: 200px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.container .input-area #search-btn:hover,
+.container .repositories-container .repository-list a:hover {
+    background-color: var(--secondary-color);
+    color: var(--hover-text-color);
+    cursor: pointer;
+}
+
+.container .profile-container .profile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container .profile-container .profile .profile-picture {
+    border-radius: 50%;
+    width: 100%;
+    max-width: 335px;
+    border: 10px solid var(--secondary-color);
+}
+
+.container .profile-container .profile .profile-name {
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.container .profile-container .profile .data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.container .profile-container .profile .data .bio {
+    padding: 10px 0 10px 0px;
+}
+
+/* .container .events-container .title {
+    padding-bottom: 10px;
+} */
+
+.container .events-container .events {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .repositories-container .title {
+    padding-bottom: 10px;
+}
+
+.container .repositories-container .repository-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.container .repositories-container .repository-list a {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 7px;
+    transition: 0.3s;
+}
+
+.container .repositories-container .repository-list .repo-info {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-top: 5px;
+    background-color: var(--icon-container);
+    border-radius: 7px;
+    color: white;
+}
+
+.container .repositories-container .repository-list .repo-info i {
+    padding-right: 5px;
+}
+
+i.fa-code-fork,
+i.fa-star,
+i.fa-eye,
+i.code {
+    font-size: 1.5rem;
+    color: var(--hover-text-color);
+}
+
+i.fa-star {
+    color: yellow;
+}
+
+i.fa-code {
+    color: var(--primary-color);
+}
+
+i.fa-eye {
+    color: white;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consultor de informações e repositórios de usuários do GitHub.">
+    <title>Quest DevEmDobro - Fetch GitHub API</title>
+    <link rel="shortcut icon" href="./src/images/github-mark.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/variables.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/responsive.css">
+
+    <base target="_blank">
+</head>
+<body>
+    <a href="https://github.com/"><i class="fa-brands fa-github"></i></a>
+
+    <main class="main">
+        <section class="container">
+            <header class="input-area">
+                <div class="loading-container">
+                    <img src="src/images/loading.svg" class="loading-icon" alt="Ícone de carregamento">
+                </div>
+                <h1 class="title">Buscar usuário do GitHub</h1>
+                <input type="text" id="username-input" placeholder="Digite o nome do usuário no GitHub">
+                <button id="search-btn">Buscar</button>
+            </header>
+
+            <div class="profile-container">
+                <div class="loading-container">
+                    <img src="src/images/loading.svg" class="loading-icon" alt="Ícone de carregamento">
+                </div>
+                <div class="profile">
+
+                </div>
+            </div>
+
+            <div class="events-container">
+                <div class="loading-container">
+                    <img src="src/images/loading.svg" class="loading-icon" alt="Ícone de carregamento">
+                </div>
+                <div class="events">
+                    
+                </div>
+            </div>
+
+            <div class="repositories-container">
+                <div class="loading-container">
+                    <img src="src/images/loading.svg" class="loading-icon" alt="Ícone de carregamento">
+                </div>
+                <div id="repositories">
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://kit.fontawesome.com/740a1262ad.js" crossorigin="anonymous"></script>
+    <script src="./src/scripts/index.js" type="module"></script>
+</body>
+</html>
