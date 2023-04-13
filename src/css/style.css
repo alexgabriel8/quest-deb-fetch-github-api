@@ -150,6 +150,13 @@ i.fa-github {
     overflow-wrap: anywhere;
 }
 
+.container .repositories-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .container .repositories-container .title {
     padding-bottom: 10px;
 }
