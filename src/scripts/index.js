@@ -9,7 +9,7 @@ const loadingContainers = document.querySelectorAll('.loading-container')
 function inputValidation(username) {
     if (username.length === 0) {
         window.alert('Digite um nome primeiro')
-        return 'Does not exist'
+        return 'Empty'
     }
 
     if(username.match(/^ +/) === null) {
@@ -25,8 +25,8 @@ usernameInput.addEventListener('keyup', async function(event) {
         loadingContainers[0].classList.add('active')
         if(event.which === 13 || event.keyCode === 13) {
             let username = document.querySelector('#username-input').value
-            if (await inputValidation(username) === 'Does not exist') return
-
+            if (await inputValidation(username) === 'Empty') return
+            
             username = await inputValidation(username)
             await Promise.all([
                 getUserData(username),
@@ -44,7 +44,7 @@ searchBtn.addEventListener('click', async function() {
     try {
         loadingContainers[0].classList.add('active')
         let username = document.querySelector('#username-input').value
-        if (await inputValidation(username) === 'Does not exist') return
+        if (await inputValidation(username) === 'Empty') return
         
         username = await inputValidation(username)
         await Promise.all([

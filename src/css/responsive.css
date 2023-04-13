@@ -12,24 +12,12 @@
 }
 
 @media (max-width: 700px) {
-    .input-area,
-    .profile-container:has(.data),
-    .events-container:has(ul),
-    .repositories-container:has(ul) {
-        padding: 10px;
-    }
-
     .container .profile-container .profile {
         flex-direction: column;
     }
 
     .container .profile-container .profile .profile-picture {
         margin-bottom: 10px;
-    }
-
-    .container .events-container .events li {
-        font-size: 1.2rem;
-        overflow-wrap: anywhere;
     }
 
     .container .repositories-container .repository-list a {
