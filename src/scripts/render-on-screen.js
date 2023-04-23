@@ -38,15 +38,32 @@ function renderRepositories() {
     } else {
         let repos = ''
         userRepositories.repositories.forEach(repo => {
-            repos += `<a href="${repo.link}">${repo.name}
-            <li>
-            <br>
-            <div class="repo-info forks"><i class="fa-solid fa-code-fork"></i>${repo.forks}</div>
-            <div class="repo-info stars"><i class="fa-sharp fa-solid fa-star"></i>${repo.stars}</div>
-            <div class="repo-info watchers"><i class="fa-solid fa-eye"></i>${repo.watchers}</div>
-            <br>
-            <div class="repo-info language"><i class="fa-solid fa-code"></i>${repo.language}</div>
-            </li></a>`
+            repos += `
+                        <a href="${repo.link}">
+                            <h3 class="repository-name">${repo.name}</h3>
+                            <li>
+                                <br>
+                                
+                                <div class="repo-info forks">
+                                    <i class="fa-solid fa-code-fork"></i>
+                                ${repo.forks}</div>
+
+                                <div class="repo-info stars">
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                ${repo.stars}</div>
+
+                                <div class="repo-info watchers">
+                                    <i class="fa-solid fa-eye"></i>
+                                ${repo.watchers}</div>
+
+                                <br>
+
+                                <div class="repo-info language">
+                                    <i class="fa-solid fa-code"></i>
+                                ${repo.language}</div>
+                            </li>
+                        </a>
+                     `
         })
     
         repositoriesContainer.innerHTML = `<h2 class="title">Repositórios</h2>

@@ -20,8 +20,7 @@
         margin-bottom: 10px;
     }
 
-    .container .repositories-container .repository-list a {
-        padding: 10px;
-        margin: 5px;
+    .container .repositories-container .repository-list {
+        gap: 10px;
     }
 }

@@ -10,10 +10,7 @@ async function getUserEvents(username) {
         const octokit = await new Octokit({ })
         const response = await octokit.request(`GET /users/${username}/events`, {})
         let events = []
-        events = await response.data.filter((event) => event.type === 'CreateEvent' || event.type === 'PushEvent')
-        while (events.length > 10) {
-            events.pop()
-        }
+        events = await response.data.filter((event) => event.type === 'CreateEvent' || event.type === 'PushEvent').slice(0, 10)
         await user.setEvents(events)
         await renderEvents()
     } catch(err) {

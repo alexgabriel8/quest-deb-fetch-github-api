@@ -34,17 +34,23 @@ let user = {
     setEvents(recievedEvents) {
         this.events = []
         recievedEvents.forEach(event => {
+            console.log(event)
             let eventItem = {}
             eventItem.name = event.repo.name
             eventItem.link = event.repo.url
             eventItem.link = eventItem.link.replace(/api\./, '')
             eventItem.link = eventItem.link.replace(/\/repos/, '')
 
-            if (event.payload.commits === undefined) {
-                eventItem.description = 'Sem descrição do evento.'
-            } else {
+            eventItem.eventType = event.type
+            if (event.type === 'CreateEvent') {
+                if(event.payload.ref_type === 'repository') {
+                    event.payload.ref_type = 'repositório'
+                }
+                eventItem.description = `Criou ${event.payload.ref_type}`
+            } else if (event.type === 'PushEvent') {
                 eventItem.description = event.payload.commits[0].message
             }
+
             this.events.push(eventItem)
         })
     }

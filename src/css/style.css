@@ -10,10 +10,6 @@ body {
     background-color: var(--primary-color);
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
 i.fa-github {
     color: white;
     font-size: 6rem;
@@ -71,7 +67,6 @@ i.fa-github {
 .container .input-area .title {
     font-size: 20px;
     font-weight: 700;
-    margin-bottom: 30px;
 }
 
 .container .input-area {
@@ -81,6 +76,7 @@ i.fa-github {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 .container .input-area #username-input,
@@ -98,8 +94,10 @@ i.fa-github {
 
 .container .input-area #search-btn {
     width: 200px;
-    margin-top: 20px;
     transition: 0.3s;
+    background-color: var(--primary-color);
+    color: #f3f3f3;
+    border: 1px solid var(--border-color);
 }
 
 .container .input-area #search-btn:hover,
@@ -115,28 +113,32 @@ i.fa-github {
     align-items: center;
 }
 
-.container .profile-container .profile .profile-picture {
+.profile-container .profile .profile-picture {
     border-radius: 50%;
     width: 100%;
     max-width: 335px;
     border: 10px solid var(--secondary-color);
 }
 
-.container .profile-container .profile .profile-name {
+.profile-container .profile .profile-name {
     font-size: 2rem;
     text-align: center;
 }
 
-.container .profile-container .profile .data {
+.profile-container .profile .profile-name:hover {
+    text-decoration: underline;
+}
+
+.profile-container .profile .data {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-left: 15px;
+    gap: 10px;
 }
 
-.container .profile-container .profile .data .bio {
-    padding: 10px 0 10px 0px;
+.profile-container .profile .data .bio {
     text-align: center;
 }
 
@@ -146,8 +148,12 @@ i.fa-github {
     align-items: center;
 }
 
-.container .events-container .events li {
+.events-container .events li {
     overflow-wrap: anywhere;
+}
+
+.events-container .events .event:hover {
+    text-decoration: underline;
 }
 
 .container .repositories-container {
@@ -157,26 +163,38 @@ i.fa-github {
     align-items: center;
 }
 
-.container .repositories-container .title {
+.repositories-container .title {
     padding-bottom: 10px;
 }
 
-.container .repositories-container .repository-list {
+.repositories-container .repository-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
+    gap: 20px;
 }
 
-.container .repositories-container .repository-list a {
+.repositories-container .repository-list a {
     border: 1px solid var(--border-color);
     padding: 20px;
-    margin: 20px;
     border-radius: 7px;
     transition: 0.3s;
 }
 
-.container .repositories-container .repository-list .repo-info {
+.repository-list a .repository-name {
+    font-weight: 400;
+}
+
+.repository-list a:hover .repository-name {
+    text-decoration: underline;
+}
+
+.repository-list li:hover {
+    text-decoration: none;
+}
+
+.repository-list .repo-info {
     display: inline-block;
     padding: 5px 10px;
     margin-top: 5px;
@@ -185,7 +203,7 @@ i.fa-github {
     color: white;
 }
 
-.container .repositories-container .repository-list .repo-info i {
+.repository-list .repo-info i {
     padding-right: 5px;
 }
 
