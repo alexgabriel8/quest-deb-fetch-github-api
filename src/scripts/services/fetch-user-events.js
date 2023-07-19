@@ -1,4 +1,3 @@
-import { Octokit, App } from "https://cdn.skypack.dev/octokit";
 import { user } from "../objects/user.js"
 import { renderEvents } from "../render-on-screen.js";
 
@@ -7,10 +6,9 @@ const loadingContainers = document.querySelectorAll('.loading-container')
 async function getUserEvents(username) {
     try {
         loadingContainers[2].classList.add('active')
-        const octokit = await new Octokit({ })
-        const response = await octokit.request(`GET /users/${username}/events`, {})
+        const serializedResponse = await (await fetch(`https://api.github.com/users/${username}/events`)).json()
         let events = []
-        events = await response.data.filter((event) => event.type === 'CreateEvent' || event.type === 'PushEvent').slice(0, 10)
+        events = await serializedResponse.filter((event) => event.type === 'CreateEvent' || event.type === 'PushEvent').slice(0, 10)
         await user.setEvents(events)
         await renderEvents()
     } catch(err) {

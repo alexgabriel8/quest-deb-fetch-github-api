@@ -2,7 +2,7 @@ let userRepositories = {
     repositories: [],
     async setRepositories(recievedRepos) {
         this.repositories = []
-        await recievedRepos.data.forEach((repository) => {
+        await recievedRepos.forEach((repository) => {
             const repo = {}
             repo.name = repository.name
             repo.forks = repository.forks_count
